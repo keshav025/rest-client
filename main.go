@@ -7,8 +7,8 @@ import (
 )
 
 type Post struct {
-	Id     string `json:"id"`
-	UserId string `json:"userId"`
+	Id     int    `json:"id"`
+	UserId int    `json:"userId"`
 	Title  string `json:"title"`
 	Body   string `json:"body"`
 }
@@ -23,5 +23,5 @@ func main() {
 		logrus.Errorf("error in get call : %v", err)
 	}
 
-	logrus.Info(m)
+	logrus.Infof("post length: %v", len(m))
 }
